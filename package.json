@@ -1,0 +1,60 @@
+{
+  "version": "1.1.0",
+  "name": "jyf-largefile-crafter",
+  "description": "The JyfLargefileCrafter is a robust and efficient JavaScript library designed to facilitate the reading and processing of large files in web applications. It provides a streamlined approach to manage and read large files in chunks, preventing memory overload and ensuring smooth performance. ",
+  "url": "https://github.com/juyufeng/jyf-largefile-crafter",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juyufeng/jyf-largefile-crafter.git"
+  },
+  "keywords": [
+    "large file processing",
+    "file reader",
+    "memory efficiency",
+    "progress tracking",
+    "chunked file reading",
+    "text processing",
+    "binary string",
+    "ArrayBuffer",
+    "web file handling",
+    "JyfLargefileCrafter",
+    "JavaScript file API",
+    "大型文件处理",
+    "文件阅读器",
+    "内存效率",
+    "进度跟踪",
+    "分块文件读取",
+    "文本处理",
+    "二进制字符串",
+    "ArrayBuffer",
+    "Web文件处理",
+    "JyfLargefileCrafter",
+    "JavaScript文件API"
+  ],
+  "author": "juyufeng <18321212571@163.com>",
+  "bugs": {
+    "url": "https://github.com/juyufeng/jyf-largefile-crafter/issues"
+  },
+  "module": "es6/JyfLargefileCrafter.js",
+  "main": "ejs/JyfLargefileCrafter.js",
+  "browser": "ejs/JyfLargefileCrafter.js",
+  "exports": {
+    ".": {
+      "import": "./es6/JyfLargefileCrafter.js",
+      "require": "./ejs/JyfLargefileCrafter.js"
+    }
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "chalk": "2.4.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "runjs": "^4.1.3"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JyfLargefileCrafter 示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <script type="text/javascript" src="JyfLargefileCrafter.js"></script>
+</head>
+
+<body>
+    <h1>使用 JyfLargefileCrafter 读取超大文件</h1>
+    <div style="display: flex; flex-direction: column;width: 100%;align-items: center;justify-content: center;">
+        <div>
+            <form>
+                <input id="file" type="file" name="file_upload" multiple style="visibility:hidden" />
+            </form>
+            <div
+                style="background-color: orange;border-radius: 8px; width: 180px; font-size: 18px;height: 60px;line-height: 60px;color: white;">
+                <a id="trigger" class="button">点击读取超大文件</a>
+            </div>
+            <div style="background-color: black;color: white;">
+                <p id="text"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var fileUpload = document.getElementById("file");
+    var trigger = document.getElementById("trigger");
+
+    fileUpload.onchange = function () {
+        var file = this.files,
+            len = file.length,
+            url = [];
+        reader = new JyfLargefileCrafter.fileReader();
+        for (var i = 0; i < len; i++) {
+            document.body.insertBefore(reader.getProgressBar(), document.getElementById("text"));
+            var secquence = Promise.resolve();
+            secquence.then(
+                reader.readAsText(file[i], function (buffer) {
+                    document.getElementById("text").innerHTML += (buffer + "<br/>");
+                }, 10));
+        }
+    }
+
+    trigger.onclick = function () {
+        fileUpload.click();
+    }
+</script>
+
+</html>
